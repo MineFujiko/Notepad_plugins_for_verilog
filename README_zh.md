@@ -1,0 +1,49 @@
+# 1. Verilog Autodeclare plugin for Notepad++
+
+[英文 English](./README.md) 
+
+## 1.1. 简介
+编写Verilog代码时，有时由于代码过长，当需要变量声明时，需要反复将代码翻到声明处进行声明，效率很低。
+
+该脚本工具，可以在选定变量后，自动在指定位置进行变量声明。wire型变量和reg型变量通过两个快捷键进行区分。
+
+![演示](_v_images/20190624014228762_28137.gif)
+### 1.1.1. 特点
+- 基于Python Scripts开发
+- wire型和reg型变量声明，两个脚本实现，通过设置两个快捷键进行区分
+- 支持单bit和多bit变量声明
+- 声明完成后，回到原变量处
+
+### 1.1.2. 使用方法
+- 在文件中添加变量声明定位标识，///DeclarationPos。所有声明按先后顺序添加在改行上方；
+- 选择需要声明的变量（多bit需选中位宽范围），按定义的快捷键即可；
+
+## 1.2. 配置步骤
+### 1.2.1. 安装Python Scripts插件
+在Notepad++中安装Python Scripts插件
+
+### 1.2.2. 将脚本拷贝至Python Scripts指定目录
+将仓库中的两个文件autodeclare_reg.py和autodeclare_wire.py拷贝到，Python Scripts脚本路径存放文件夹中。
+
+点击新建脚本，可以知道脚本存放路径。
+
+![路径查看](_v_images/20190624010644550_22983.png)
+
+### 1.2.3. 绑定快捷键
+打开Notepad++的快捷键设置窗口。
+
+![快捷键设置窗口](_v_images/20190624010921079_14783.png)
+
+在插件快捷键设置栏中，找到对应的脚本，并自定义设置快捷键。
+
+![快捷键设置](_v_images/20190624011025146_9630.png)
+
+注意：
+- 如果在快捷键配置中无法找到对应脚本，则在Python Scirpts的配置栏中确认，脚本是否成功添加进来；
+- Alt+w，会和QQ的默认语音输入快捷键冲突；
+
+![配置栏](_v_images/20190624011351588_17559.png)
+
+![脚本添加](_v_images/20190624011417786_28189.png)
+# 2. 依赖
+- [Python Scripts](https://github.com/realpython/python-scripts) (MIT License)
